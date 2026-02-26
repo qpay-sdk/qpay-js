@@ -2,6 +2,10 @@
   "name": "qpay-js",
   "version": "1.0.0",
   "description": "QPay V2 payment API client library for Node.js and browsers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qpay-sdk/qpay-js"
+  },
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
