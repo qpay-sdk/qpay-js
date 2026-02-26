@@ -1,5 +1,8 @@
 # qpay-js
 
+[![npm version](https://img.shields.io/npm/v/qpay-js.svg)](https://www.npmjs.com/package/qpay-js)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 TypeScript/JavaScript client library for the QPay V2 payment API. Works in Node.js (18+) and modern browsers.
 
 ## Installation
