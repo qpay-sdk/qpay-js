@@ -1,5 +1,6 @@
 # qpay-js
 
+[![CI](https://github.com/qpay-sdk/qpay-js/actions/workflows/ci.yml/badge.svg)](https://github.com/qpay-sdk/qpay-js/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/qpay-js.svg)](https://www.npmjs.com/package/qpay-js)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
