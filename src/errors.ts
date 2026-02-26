@@ -1,0 +1,80 @@
+/**
+ * Error thrown by the QPay client for API errors.
+ */
+export class QPayError extends Error {
+  public readonly statusCode: number;
+  public readonly code: string;
+  public readonly rawBody: string;
+
+  constructor(statusCode: number, code: string, message: string, rawBody: string) {
+    super(`qpay: ${code} - ${message} (status ${statusCode})`);
+    this.name = 'QPayError';
+    this.statusCode = statusCode;
+    this.code = code;
+    this.rawBody = rawBody;
+  }
+}
+
+/**
+ * Type guard to check if an error is a QPayError.
+ */
+export function isQPayError(err: unknown): err is QPayError {
+  return err instanceof QPayError;
+}
+
+// ============================================================================
+// Error code constants
+// ============================================================================
+
+export const ERR_ACCOUNT_BANK_DUPLICATED = 'ACCOUNT_BANK_DUPLICATED';
+export const ERR_ACCOUNT_SELECTION_INVALID = 'ACCOUNT_SELECTION_INVALID';
+export const ERR_AUTHENTICATION_FAILED = 'AUTHENTICATION_FAILED';
+export const ERR_BANK_ACCOUNT_NOT_FOUND = 'BANK_ACCOUNT_NOTFOUND';
+export const ERR_BANK_MCC_ALREADY_ADDED = 'BANK_MCC_ALREADY_ADDED';
+export const ERR_BANK_MCC_NOT_FOUND = 'BANK_MCC_NOT_FOUND';
+export const ERR_CARD_TERMINAL_NOT_FOUND = 'CARD_TERMINAL_NOTFOUND';
+export const ERR_CLIENT_NOT_FOUND = 'CLIENT_NOTFOUND';
+export const ERR_CLIENT_USERNAME_DUPLICATED = 'CLIENT_USERNAME_DUPLICATED';
+export const ERR_CUSTOMER_DUPLICATE = 'CUSTOMER_DUPLICATE';
+export const ERR_CUSTOMER_NOT_FOUND = 'CUSTOMER_NOTFOUND';
+export const ERR_CUSTOMER_REGISTER_INVALID = 'CUSTOMER_REGISTER_INVALID';
+export const ERR_EBARIMT_CANCEL_NOT_SUPPORTED = 'EBARIMT_CANCEL_NOTSUPPERDED';
+export const ERR_EBARIMT_NOT_REGISTERED = 'EBARIMT_NOT_REGISTERED';
+export const ERR_EBARIMT_QR_CODE_INVALID = 'EBARIMT_QR_CODE_INVALID';
+export const ERR_INFORM_NOT_FOUND = 'INFORM_NOTFOUND';
+export const ERR_INPUT_CODE_REGISTERED = 'INPUT_CODE_REGISTERED';
+export const ERR_INPUT_NOT_FOUND = 'INPUT_NOTFOUND';
+export const ERR_INVALID_AMOUNT = 'INVALID_AMOUNT';
+export const ERR_INVALID_OBJECT_TYPE = 'INVALID_OBJECT_TYPE';
+export const ERR_INVOICE_ALREADY_CANCELED = 'INVOICE_ALREADY_CANCELED';
+export const ERR_INVOICE_CODE_INVALID = 'INVOICE_CODE_INVALID';
+export const ERR_INVOICE_CODE_REGISTERED = 'INVOICE_CODE_REGISTERED';
+export const ERR_INVOICE_LINE_REQUIRED = 'INVOICE_LINE_REQUIRED';
+export const ERR_INVOICE_NOT_FOUND = 'INVOICE_NOTFOUND';
+export const ERR_INVOICE_PAID = 'INVOICE_PAID';
+export const ERR_INVOICE_RECEIVER_DATA_ADDRESS_REQUIRED = 'INVOICE_RECEIVER_DATA_ADDRESS_REQUIRED';
+export const ERR_INVOICE_RECEIVER_DATA_EMAIL_REQUIRED = 'INVOICE_RECEIVER_DATA_EMAIL_REQUIRED';
+export const ERR_INVOICE_RECEIVER_DATA_PHONE_REQUIRED = 'INVOICE_RECEIVER_DATA_PHONE_REQUIRED';
+export const ERR_INVOICE_RECEIVER_DATA_REQUIRED = 'INVOICE_RECEIVER_DATA_REQUIRED';
+export const ERR_MAX_AMOUNT_ERR = 'MAX_AMOUNT_ERR';
+export const ERR_MCC_NOT_FOUND = 'MCC_NOTFOUND';
+export const ERR_MERCHANT_ALREADY_REGISTERED = 'MERCHANT_ALREADY_REGISTERED';
+export const ERR_MERCHANT_INACTIVE = 'MERCHANT_INACTIVE';
+export const ERR_MERCHANT_NOT_FOUND = 'MERCHANT_NOTFOUND';
+export const ERR_MIN_AMOUNT_ERR = 'MIN_AMOUNT_ERR';
+export const ERR_NO_CREDENTIALS = 'NO_CREDENDIALS';
+export const ERR_OBJECT_DATA_ERROR = 'OBJECT_DATA_ERROR';
+export const ERR_P2P_TERMINAL_NOT_FOUND = 'P2P_TERMINAL_NOTFOUND';
+export const ERR_PAYMENT_ALREADY_CANCELED = 'PAYMENT_ALREADY_CANCELED';
+export const ERR_PAYMENT_NOT_PAID = 'PAYMENT_NOT_PAID';
+export const ERR_PAYMENT_NOT_FOUND = 'PAYMENT_NOTFOUND';
+export const ERR_PERMISSION_DENIED = 'PERMISSION_DENIED';
+export const ERR_QR_ACCOUNT_INACTIVE = 'QRACCOUNT_INACTIVE';
+export const ERR_QR_ACCOUNT_NOT_FOUND = 'QRACCOUNT_NOTFOUND';
+export const ERR_QR_CODE_NOT_FOUND = 'QRCODE_NOTFOUND';
+export const ERR_QR_CODE_USED = 'QRCODE_USED';
+export const ERR_SENDER_BRANCH_DATA_REQUIRED = 'SENDER_BRANCH_DATA_REQUIRED';
+export const ERR_TAX_LINE_REQUIRED = 'TAX_LINE_REQUIRED';
+export const ERR_TAX_PRODUCT_CODE_REQUIRED = 'TAX_PRODUCT_CODE_REQUIRED';
+export const ERR_TRANSACTION_NOT_APPROVED = 'TRANSACTION_NOT_APPROVED';
+export const ERR_TRANSACTION_REQUIRED = 'TRANSACTION_REQUIRED';
